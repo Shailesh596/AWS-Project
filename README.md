@@ -121,10 +121,4 @@ Follow Implementation file
 Follow Implementation file
 
 ### Troubleshooting
-●	Common Issues: List common issues and their solutions.
-●	Support: Information on how to get help or support.
-
-
-Conclusion
-This document outlines the initial design for deploying a resilient and scalable web application on AWS. It emphasizes high availability, scalability, security, and
-resilience, leveraging AWS services to achieve these objectives. The next steps include detailed planning, implementation, testing, and deployment phases, ensuring the web application meets the outlined objectives.
+Follow Implementation File
