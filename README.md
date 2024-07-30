@@ -77,7 +77,10 @@ This document provides an overview of the network architecture for the Ap-South-
 ### NAT Gateway  
 
 - **NAT Gateway**:   
-  - Allows instances in the private subnet to initiate outbound traffic to the internet while preventing inbound traffic from the internet.  
+  - Allows instances in the private subnet to initiate outbound traffic to the internet while preventing inbound traffic from the internet.
+### Note
+
+   After the creation of the complete VPC architecture. Go to VPC - Action - Edit VPC Setting - Enable DNS Hostname
 
 ## Summary  
 
@@ -86,37 +89,42 @@ This architecture ensures a secure and efficient network setup, allowing for bot
 
 **●	Security Groups**
 
-   •	Web-SG – To access Webserver
+   •	Web-SG – To access Webserver  - (Allow all traffic from Anywhere) 
    
-   •	ALB-SG – To access Load Balancer
+   •	ALB-SG – To access Load Balancer   - (Allow all traffic from Anywhere) -  
    
-   •	EFS-SG – To access EFS.
+   •	EFS-SG – To access EFS   -  - (Allow all traffic from Anywhere) 
    
+### Note
 
 
-●	Conﬁguration: Set up to ensure it is mounted on all EC2 instances for shared storage needs.
-EC2
+We allow All traffic from Anywhere to all Security Groups for temporary testing, they all will be edited with by following the best practices to enhance our security at last phase of our project completion.
 
-●	Purpose: Host the web application and handle compute tasks.
-●	Conﬁguration: Instance types, AMIs, and initial bootstrapping scripts. AWS Auto Scaling
-●	Purpose: Dynamically adjust the number of EC2 instances based on traﬃc.
-●	Conﬁguration: Deﬁne scaling policies based on metrics like CPU utilisation and request rates.
-ALB
-●	Purpose: Distribute incoming traﬃc across multiple targets to increase the availability and fault tolerance of your application.
-●	Conﬁguration: Listener and rule setup for routing traﬃc to the appropriate target groups.
-Route 53
-●	Purpose: Connect user requests to the infrastructure running in AWS.
-●	Conﬁguration: DNS management, health checks, and routing policies to ensure high availability and traﬃc management.
  
-Security Measures
-●	Security Groups: Deﬁne inbound and outbound traﬃc rules for EC2 instances and other services.
-●	IAM Roles: Secure API calls from EC2 instances.
-●	Data Encryption: At rest (EFS) and in transit using TLS.
+### Elastic Compute Cloud (EC2)
 
-Scalability and High Availability Strategy
-●	Auto Scaling: Setup and conﬁguration details, including scaling policies.
-●	Multi-AZ Deployment: Ensure the application is deployed across multiple AZs to achieve high availability.
+Follow Implementation file
+
+### Elastic File System (EFS)
+Follow Implementation file
+
+### Application Load Balancer (ALB)
+Follow Implementation file
+
+### 	Route 53
+Follow Implementation file
+
+### Application Deployment
+Follow Implementation file
+
+### Backup and Disaster Recovery
+Follow Implementation file
+
+### Troubleshooting
+●	Common Issues: List common issues and their solutions.
+●	Support: Information on how to get help or support.
+
 
 Conclusion
-This document outlines the initial design for deploying a resilient and scalable web application on AWS. It emphasises high availability, scalability, security, and
+This document outlines the initial design for deploying a resilient and scalable web application on AWS. It emphasizes high availability, scalability, security, and
 resilience, leveraging AWS services to achieve these objectives. The next steps include detailed planning, implementation, testing, and deployment phases, ensuring the web application meets the outlined objectives.
